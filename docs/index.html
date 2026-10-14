@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explora la arquitectura pública y los procesos de SGX VI: componentes, recorrido del cliente, pago, entrega y evolución de SGX PASS.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>SGX VI · Architecture Explorer</title>
+  <link rel="stylesheet" href="architecture-explorer/explorer.css">
+  <script src="architecture-explorer/explorer.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html" aria-label="SGX VI, inicio del Architecture Explorer"><span class="brand-mark" aria-hidden="true">VI</span><span>SGX VI <small>SGODX / PUBLIC SHOWCASE</small></span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#vistas">Explorar vistas</a>
+      <a href="https://github.com/dpsychoo/gta-vi-generator-showcase">Caso de estudio</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" disabled>Tema oscuro</button>
+    </nav>
+  </header>
+  <main id="contenido" class="wrap">
+    <section class="hero" aria-labelledby="titulo">
+      <div>
+        <p class="eyebrow">ARQUITECTURA PÚBLICA / EXPLORACIÓN INTERACTIVA</p>
+        <h1 id="titulo">Comprende el sistema.<br><span>Explora sus procesos.</span></h1>
+        <p class="intro">Una lectura visual de SGX VI para evaluar el producto, sus responsabilidades técnicas y el recorrido desde la entrada del cliente hasta la entrega digital.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="architecture-explorer/views/product.html">Abrir arquitectura <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="https://create.sgodx.com/">Aplicación pública <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="architecture-explorer/reading.html">Lectura textual</a>
+        </div>
+      </div>
+      <aside class="scope" aria-labelledby="alcance-titulo">
+        <p class="eyebrow">ALCANCE DEL EXPLORADOR</p>
+        <h2 id="alcance-titulo">Producto visible.<br>Información publicable.</h2>
+        <p>Vistas nuevas y simplificadas, basadas en documentación del showcase y en las políticas públicas del servicio.</p>
+        <ul>
+          <li>Responsabilidades y procesos de alto nivel</li>
+          <li>Fuentes y estados explícitos</li>
+          <li>Archivos estáticos, sin conexión a servicios del producto</li>
+        </ul>
+        <a href="#evidencia">Consultar evidencia y límites <span aria-hidden="true">↓</span></a>
+      </aside>
+    </section>
+
+    <section id="vistas" class="views-section" aria-labelledby="vistas-titulo">
+      <div class="section-heading"><div><p class="eyebrow">CUATRO PERSPECTIVAS / UNA LECTURA COHERENTE</p><h2 id="vistas-titulo">Architecture Explorer</h2></div><p id="result-count" role="status" aria-live="polite" aria-atomic="true">4 vistas disponibles</p></div>
+      <div class="controls">
+        <div class="search" role="search">
+          <label for="view-search">Buscar una vista o tecnología</label>
+          <input id="view-search" type="search" placeholder="Por ejemplo: pago, OpenAI, PASS…" aria-controls="view-grid" autocomplete="off" disabled>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar vistas por estado">
+          <button type="button" data-filter="all" aria-pressed="true" aria-controls="view-grid" disabled>Todas</button>
+          <button type="button" data-filter="implemented" aria-pressed="false" aria-controls="view-grid" disabled>Implementado</button>
+          <button type="button" data-filter="planned" aria-pressed="false" aria-controls="view-grid" disabled>Planificado</button>
+          <button type="button" data-filter="hypothetical" aria-pressed="false" aria-controls="view-grid" disabled>Hipotético</button>
+        </div>
+      </div>
+      <noscript><p class="notice">Los enlaces a las vistas siguen disponibles. La búsqueda, los filtros y los controles interactivos de Archify requieren JavaScript.</p></noscript>
+      <div id="view-grid" class="view-grid">
+        <article class="view-card" data-state="implemented" data-keywords="arquitectura componentes astro react typescript vercel supabase almacenamiento openai mercado pago resend correo responsabilidades">
+          <div class="card-top"><span class="view-number" aria-hidden="true">01</span><span class="status implemented">Implementado · documentado</span></div>
+          <p class="view-type">COMPONENTES / RESPONSABILIDADES</p>
+          <h3>Arquitectura del producto</h3>
+          <p>Relaciona la experiencia web, el servicio de aplicación y los proveedores publicados de pago, imágenes, datos y correo.</p>
+          <ul class="topics" aria-label="Temas de la vista"><li>Frontend</li><li>Proveedores</li><li>Entrega</li></ul>
+          <a class="view-link" href="architecture-explorer/views/product.html">Explorar arquitectura <span aria-hidden="true">↗</span></a>
+          <a class="text-alt-link" href="architecture-explorer/reading.html#product">Lectura textual de esta vista</a>
+        </article>
+        <article class="view-card" data-state="implemented" data-keywords="recorrido cliente usuario flujo formulario imagenes consentimiento entrada compra pago confirmacion generacion resultado">
+          <div class="card-top"><span class="view-number" aria-hidden="true">02</span><span class="status implemented">Implementado · documentado</span></div>
+          <p class="view-type">RECORRIDO / PROCESO COMERCIAL</p>
+          <h3>Del cliente al resultado</h3>
+          <p>Sigue la preparación de imágenes y consentimiento, la confirmación del pago y la creación y entrega del resultado.</p>
+          <ul class="topics" aria-label="Temas de la vista"><li>Entrada</li><li>Compra</li><li>Resultado</li></ul>
+          <a class="view-link" href="architecture-explorer/views/journey.html">Explorar recorrido <span aria-hidden="true">↗</span></a>
+          <a class="text-alt-link" href="architecture-explorer/reading.html#journey">Lectura textual de esta vista</a>
+        </article>
+        <article class="view-card" data-state="implemented" data-keywords="secuencia pago entrega mercado pago openai resend correo imagen generacion checkout confirmacion">
+          <div class="card-top"><span class="view-number" aria-hidden="true">03</span><span class="status implemented">Implementado · documentado</span></div>
+          <p class="view-type">SECUENCIA / INTERACCIONES CONCEPTUALES</p>
+          <h3>Pago, creación y entrega</h3>
+          <p>Lee el orden comercial entre el cliente, SGX VI y sus proveedores. Una secuencia conceptual, no una traza de producción.</p>
+          <ul class="topics" aria-label="Temas de la vista"><li>Pago</li><li>IA</li><li>Correo</li></ul>
+          <a class="view-link" href="architecture-explorer/views/delivery.html">Explorar secuencia <span aria-hidden="true">↗</span></a>
+          <a class="text-alt-link" href="architecture-explorer/reading.html#delivery">Lectura textual de esta vista</a>
+        </article>
+        <article class="view-card" data-state="implemented planned" data-keywords="sgx pass identidad persistente compras evolucion eventos futuros condicionado planificado condiciones">
+          <div class="card-top"><span class="view-number" aria-hidden="true">04</span><span class="status planned">Actual + futuro condicionado</span></div>
+          <p class="view-type">IDENTIDAD / ESTADO DEL PRODUCTO</p>
+          <h3>SGX PASS y su evolución</h3>
+          <p>Distingue la identidad persistente descrita en los términos de los eventos futuros sujetos a condiciones propias.</p>
+          <ul class="topics" aria-label="Temas de la vista"><li>Identidad</li><li>Persistencia</li><li>Condiciones</li></ul>
+          <a class="view-link" href="architecture-explorer/views/pass.html">Explorar SGX PASS <span aria-hidden="true">↗</span></a>
+          <a class="text-alt-link" href="architecture-explorer/reading.html#pass">Lectura textual de esta vista</a>
+        </article>
+      </div>
+      <div id="empty-state" class="empty-state" hidden><h3>No hay vistas para esta selección</h3><p id="empty-message">Prueba otra búsqueda o consulta todas las vistas.</p><button id="reset-search" class="button secondary" type="button">Mostrar todas las vistas</button></div>
+    </section>
+
+    <section class="reading-guide" aria-labelledby="guia-titulo">
+      <div><p class="eyebrow">CÓMO LEER LOS DIAGRAMAS</p><h2 id="guia-titulo">Explora a tu ritmo</h2><p>Abre una vista, usa el zoom para ampliar detalles y selecciona un nodo para seguir sus relaciones. <strong>Node Finder</strong> permite buscar elementos; las vistas guiadas destacan grupos de interés.</p><p><a href="architecture-explorer/reading.html">Abrir la lectura textual accesible de las cuatro vistas <span aria-hidden="true">↗</span></a></p><p class="small">Los textos del producto están en español. Los controles nativos y el atributo de idioma de las páginas Archify usan su interfaz inglesa. En móvil puedes ampliar y desplazarte por el diagrama; no se altera su topología.</p></div>
+      <dl class="state-legend">
+        <div><dt><span class="status implemented">Implementado</span></dt><dd>Responsabilidad o comportamiento descrito en las fuentes públicas. No equivale a una auditoría independiente.</dd></div>
+        <div><dt><span class="status planned">Planificado / condicionado</span></dt><dd>Posibilidad futura anunciada con condiciones. No se presenta como un componente operativo ni como un compromiso de fecha.</dd></div>
+        <div><dt><span class="status hypothetical">Hipotético</span></dt><dd>Una propuesta ilustrativa requeriría esta etiqueta y evidencia de su alcance. Este explorador no incluye vistas hipotéticas.</dd></div>
+      </dl>
+    </section>
+
+    <section id="evidencia" class="evidence" aria-labelledby="evidencia-titulo">
+      <p class="eyebrow">FUENTES / LÍMITES</p><h2 id="evidencia-titulo">Una arquitectura pública con contexto</h2>
+      <p>La documentación existente del showcase registra el frontend. La <a href="https://create.sgodx.com/privacidad">política de privacidad</a> identifica proveedores; los <a href="https://create.sgodx.com/terminos">términos del servicio</a> describen el recorrido comercial y SGX PASS. La revisión no ejecuta compras ni generación de imágenes.</p>
+      <p>Los diagramas omiten endpoints internos, registros de clientes, esquemas de datos, controles de seguridad y lógica antifraude. Los estados visuales describen evidencia pública; no son estados internos de la aplicación.</p>
+      <div class="document-links"><a href="architecture-explorer/SECURITY_REVIEW.md">Revisión de seguridad</a><a href="architecture-explorer/PUBLISHING.md">Propuesta de publicación</a><a href="architecture-explorer/VALIDATION.md">Validación y trazabilidad</a></div>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><p><strong>SGX VI / SGODX</strong> · Showcase público · <a href="https://github.com/dpsychoo/gta-vi-generator-showcase">Repositorio del caso de estudio</a></p><p>Experiencia independiente, no afiliada, patrocinada ni respaldada por Rockstar Games o Take-Two Interactive. Las marcas pertenecen a sus titulares. El runtime del visor mantiene su <a href="architecture-explorer/licenses/ARCHIFY-MIT.txt">licencia Archify MIT</a> y sus <a href="architecture-explorer/licenses/THIRD_PARTY_NOTICES.md">avisos de terceros</a>.</p></footer>
+</body>
+</html>

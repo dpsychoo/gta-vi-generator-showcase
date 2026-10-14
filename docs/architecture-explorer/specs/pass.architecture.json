@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "SGX PASS · identidad y evolución",
+    "quality_profile": "showcase",
+    "views": [
+      {"id": "actual", "label": "Identidad actual", "focus": ["compra", "identidad"], "note": "La identidad persistente está descrita en los términos públicos."},
+      {"id": "condicional", "label": "Evolución condicionada", "focus": ["identidad", "eventos"], "note": "Los eventos futuros tienen condiciones propias; no son funcionalidades operativas afirmadas aquí."}
+    ]
+  },
+  "components": [
+    {"id": "compra", "type": "backend", "label": "Compras del cliente", "sublabel": "Servicio digital", "tag": "Implementado · documentado", "pos": [50, 80], "size": [250, 84]},
+    {"id": "identidad", "type": "backend", "label": "SGX PASS", "sublabel": "Identidad persistente", "tag": "Implementado · documentado", "pos": [500, 300], "size": [250, 84]},
+    {"id": "eventos", "type": "external", "label": "Eventos futuros", "sublabel": "Condiciones propias", "tag": "Planificado · condicionado", "pos": [950, 520], "size": [250, 84]}
+  ],
+  "connections": [
+    {"id": "identidad-persistente", "from": "compra", "to": "identidad", "label": "Conserva el PASS", "variant": "emphasis"},
+    {"id": "evolucion-condicionada", "from": "identidad", "to": "eventos", "label": "Sujeto a condiciones", "variant": "dashed"}
+  ],
+  "cards": [
+    {"dot": "cyan", "title": "Implementado", "items": ["Los términos describen un PASS persistente por cliente.", "Compras posteriores no implican un nuevo PASS."]},
+    {"dot": "amber", "title": "Planificado · condicionado", "items": ["Los eventos futuros dependen de bases y requisitos propios.", "La identidad no garantiza participación ni beneficios."]},
+    {"dot": "slate", "title": "Hipotético", "items": ["No se incluyen escenarios hipotéticos en esta vista.", "Las líneas discontinuas no representan operación actual."]}
+  ]
+}

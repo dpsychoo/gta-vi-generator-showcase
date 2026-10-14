@@ -18,6 +18,10 @@ SGX VI is a live, commercial digital-creation experience that connects a themed 
 - **Managed backend/data:** Supabase
 - **Payments:** Mercado Pago
 - **Deployment:** Vercel
+- **Published AI provider:** OpenAI
+- **Transactional email:** Resend
+
+The frontend choices above are documented project information. Provider roles are also described in the live application's [published privacy policy](https://create.sgodx.com/privacidad). The README includes a responsibility map of the public product flow, rather than a diagram of the private implementation.
 
 ## Product and engineering considerations
 
@@ -37,6 +41,6 @@ SGX VI is a live, commercial digital-creation experience that connects a themed 
 
 ## Verification and scope
 
-The customer journey described here is drawn from the currently visible public application. This showcase **does not claim** independently audited security, load capacity, conversion rates, or revenue outcomes. Screenshots will be included only after review for permissions and sensitive data.
+The customer journey described here is drawn from the currently visible public application. This showcase **does not claim** independently audited security, load capacity, conversion rates, or revenue outcomes. Reviewed empty-state interface captures and their provenance are recorded in the [screenshot inventory](../assets/screenshots/README.md). No purchase, image generation or result delivery was exercised to create those captures.
 
 **Live application:** https://create.sgodx.com/

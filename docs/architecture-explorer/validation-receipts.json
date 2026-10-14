@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "generator": "Archify 2.17",
+  "diagrams": [
+    {
+      "diagram_type": "architecture",
+      "specification": "specs/product.architecture.json",
+      "output": "views/product.html",
+      "specification_sha256": "532b9863e8a6ff0d7654d7773b0524b93d8f905d9f605c01e093bbafcf8153e1",
+      "artifact_sha256": "2a76881505786aa57d77f94ceb7944092f9c3278c7e1b27e302672552bd24125",
+      "specification_bytes": 2927,
+      "artifact_bytes": 807249,
+      "validation": {
+        "checksPassed": 9,
+        "checkCount": 9,
+        "compositionProfile": "showcase",
+        "compositionStatus": "pass",
+        "errors": 0,
+        "warnings": 0
+      },
+      "browser_evidence": "passed",
+      "visual_review": "passed",
+      "correction_rounds": 0
+    },
+    {
+      "diagram_type": "workflow",
+      "specification": "specs/journey.workflow.json",
+      "output": "views/journey.html",
+      "specification_sha256": "3e4a50ff5e412f1568c2885fbff109de48fd720a01774039031692316450b92d",
+      "artifact_sha256": "f3307fffb9d3dcd50502c272949746d4cd99b1f5f7cb4bc3394ee2e2006c9a2a",
+      "specification_bytes": 4458,
+      "artifact_bytes": 806752,
+      "validation": {
+        "checksPassed": 9,
+        "checkCount": 9,
+        "compositionProfile": "showcase",
+        "compositionStatus": "pass",
+        "errors": 0,
+        "warnings": 0
+      },
+      "browser_evidence": "passed",
+      "visual_review": "passed",
+      "correction_rounds": 1
+    },
+    {
+      "diagram_type": "sequence",
+      "specification": "specs/delivery.sequence.json",
+      "output": "views/delivery.html",
+      "specification_sha256": "3ff99e320a48dd0688212f4ca3b8011dcdccf7fbbf15298db629df0d23c63fe1",
+      "artifact_sha256": "467b4967e05161ccdcb29acb8cd36d929a4b9bc4b26d33ea071efaaae5c64ade",
+      "specification_bytes": 3171,
+      "artifact_bytes": 803900,
+      "validation": {
+        "checksPassed": 9,
+        "checkCount": 9,
+        "compositionProfile": "showcase",
+        "compositionStatus": "pass",
+        "errors": 0,
+        "warnings": 0
+      },
+      "browser_evidence": "passed",
+      "visual_review": "passed",
+      "correction_rounds": 2
+    },
+    {
+      "diagram_type": "architecture",
+      "specification": "specs/pass.architecture.json",
+      "output": "views/pass.html",
+      "specification_sha256": "f3967c3f2a5c9b44e2fa3c60409cca36ad0360d334fcc216f873d4eca315499c",
+      "artifact_sha256": "b856c0b9fbdd7eaec4c56f744dad3e8b40e155f6670eae8106b8c4bd8b2b7c9e",
+      "specification_bytes": 1954,
+      "artifact_bytes": 798302,
+      "validation": {
+        "checksPassed": 9,
+        "checkCount": 9,
+        "compositionProfile": "showcase",
+        "compositionStatus": "pass",
+        "errors": 0,
+        "warnings": 0
+      },
+      "browser_evidence": "passed",
+      "visual_review": "passed",
+      "correction_rounds": 0
+    }
+  ]
+}

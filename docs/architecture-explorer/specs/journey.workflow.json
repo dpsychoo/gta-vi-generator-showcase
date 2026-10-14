@@ -1,0 +1,192 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "SGX VI · recorrido del cliente",
+    "quality_profile": "showcase",
+    "legend": {
+      "entries": {
+        "frontend": {"label": "Interfaz"},
+        "backend": {"label": "Aplicación"},
+        "external": {"label": "Proveedor"}
+      }
+    },
+    "views": [
+      {
+        "id": "preparacion",
+        "label": "Preparar la creación",
+        "focus": [
+          "descubrir",
+          "preparar",
+          "pagar"
+        ],
+        "note": "Interfaz pública: imágenes, correo y condiciones antes del pago."
+      },
+      {
+        "id": "entrega",
+        "label": "Del pago a la entrega",
+        "focus": [
+          "pagar",
+          "confirmar",
+          "generar",
+          "recibir"
+        ],
+        "note": "Secuencia comercial publicada; no describe mecanismos internos."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "cliente",
+      "label": "Experiencia del cliente"
+    },
+    {
+      "id": "compra",
+      "label": "Pago del servicio"
+    },
+    {
+      "id": "producto",
+      "label": "Creación y entrega"
+    },
+    {
+      "id": "alternativa",
+      "label": "Sin contratación confirmada",
+      "variant": "exception"
+    }
+  ],
+  "mainPath": [
+    "descubrir",
+    "preparar",
+    "pagar",
+    "confirmar",
+    "generar",
+    "recibir"
+  ],
+  "nodes": [
+    {
+      "id": "descubrir",
+      "lane": "cliente",
+      "col": 0,
+      "type": "frontend",
+      "label": "Descubrir SGX VI",
+      "sublabel": "Aplicación pública",
+      "width": 180
+    },
+    {
+      "id": "preparar",
+      "lane": "cliente",
+      "col": 1,
+      "type": "frontend",
+      "label": "Preparar la entrada",
+      "sublabel": "Imágenes, correo y consentimiento",
+      "width": 180
+    },
+    {
+      "id": "pagar",
+      "lane": "compra",
+      "col": 2,
+      "type": "external",
+      "label": "Realizar el pago",
+      "sublabel": "Mercado Pago",
+      "width": 180
+    },
+    {
+      "id": "confirmar",
+      "lane": "compra",
+      "col": 3,
+      "type": "external",
+      "label": "Confirmación de pago",
+      "sublabel": "Condición de inicio del servicio",
+      "width": 180
+    },
+    {
+      "id": "generar",
+      "lane": "producto",
+      "col": 4,
+      "type": "backend",
+      "label": "Generar la imagen",
+      "sublabel": "Servicio personalizado mediante IA",
+      "width": 180
+    },
+    {
+      "id": "recibir",
+      "lane": "producto",
+      "col": 5,
+      "type": "frontend",
+      "label": "Recibir el resultado",
+      "sublabel": "Página y enlace por correo",
+      "width": 180
+    },
+    {
+      "id": "sin-confirmacion",
+      "lane": "alternativa",
+      "col": 2,
+      "type": "external",
+      "label": "Pago no confirmado",
+      "sublabel": "El servicio no comienza",
+      "width": 180
+    }
+  ],
+  "edges": [
+    {
+      "id": "descubrir-preparar",
+      "from": "descubrir",
+      "to": "preparar",
+      "role": "main"
+    },
+    {
+      "id": "preparar-pagar",
+      "from": "preparar",
+      "to": "pagar",
+      "role": "main",
+      "label": "Continuar"
+    },
+    {
+      "id": "pagar-confirmar",
+      "from": "pagar",
+      "to": "confirmar",
+      "role": "main",
+      "label": "Confirmado"
+    },
+    {
+      "id": "confirmar-generar",
+      "from": "confirmar",
+      "to": "generar",
+      "role": "main",
+      "label": "Iniciar servicio"
+    },
+    {
+      "id": "generar-recibir",
+      "from": "generar",
+      "to": "recibir",
+      "role": "main",
+      "label": "Resultado digital"
+    },
+    {
+      "id": "pago-alternativo",
+      "from": "pagar",
+      "to": "sin-confirmacion",
+      "role": "branch",
+      "label": "Sin confirmación",
+      "variant": "dashed"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Implementado · documentado",
+      "items": [
+        "La interfaz y los términos públicos describen este recorrido.",
+        "La generación comienza después de confirmar el pago."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Límite de esta vista",
+      "items": [
+        "Proceso conceptual: no contiene estados de base de datos.",
+        "No publica callbacks, controles de pago ni recuperación operativa."
+      ]
+    }
+  ]
+}
