@@ -12,11 +12,9 @@ Built by **David Castro** · **SGODX**
 
 [Product](#product-features) · [Architecture](#high-level-architecture) · [Engineering](#engineering-highlights) · [Project overview](docs/PROJECT_OVERVIEW.md)
 
-**[Architecture Explorer — interactive public diagrams](docs/index.html)**
+[LIVE APPLICATION](https://create.sgodx.com/) · **[ARCHITECTURE EXPLORER](https://dpsychoo.github.io/gta-vi-generator-showcase/)** · [ACCESSIBLE TEXT VERSION](https://dpsychoo.github.io/gta-vi-generator-showcase/architecture-explorer/reading.html)
 
-[Equivalent text reading](docs/architecture-explorer/reading.html)
-
-<sub>Ready for local review · GitHub Pages publication awaits approval</sub>
+<sub>Published on GitHub Pages · A complete text alternative is available</sub>
 
 <sub>Public product showcase · Private commercial source code</sub>
 
@@ -90,7 +88,7 @@ The frontend stack is recorded in the existing [project overview](docs/PROJECT_O
 
 The explorer is a high-level product view based on public documentation; it does not disclose the private implementation or source code.
 
-Explore the four [interactive Archify views](docs/index.html): product responsibilities, the customer journey, payment and delivery, and SGX PASS. Each view supports zoom, node search and guided navigation. The [publication proposal](docs/architecture-explorer/PUBLISHING.md) documents the future GitHub Pages setup; publication is not enabled by these changes.
+Explore the four [interactive Archify views](https://dpsychoo.github.io/gta-vi-generator-showcase/): product responsibilities, the customer journey, payment and delivery, and SGX PASS. Each view supports zoom, node search and guided navigation. The [accessible text version](https://dpsychoo.github.io/gta-vi-generator-showcase/architecture-explorer/reading.html) provides a complete textual alternative for all four diagrams. Native Archify viewers have documented accessibility limitations, so the text version remains available alongside the interactive views.
 
 The following responsibility map summarizes the public product journey and published provider roles. Payment confirmation precedes image generation; Vercel provides hosting and application execution.
 
