@@ -1,75 +1,133 @@
 <div align="center">
 
-# SGX VI — AI-Powered Creative Experience
+<sub>SGODX / PRODUCT CASE STUDY</sub>
 
-**A production web experience for creating personalized, GTA VI-inspired digital artwork.**
+# SGX VI — AI Image Creation
+
+**A commercial web experience connecting personal images, AI generation and digital delivery.**
 
 Built by **David Castro** · **SGODX**
 
-[**↗ Explore the live application**](https://create.sgodx.com/) · [**Project overview**](docs/PROJECT_OVERVIEW.md)
+<a href="https://create.sgodx.com/"><img src="assets/cta-badge.svg" alt="Open the live SGX VI application" /></a>
 
-`Astro` · `React` · `TypeScript` · `Supabase` · `Mercado Pago` · `Vercel`
+[Product](#product-features) · [Architecture](#high-level-architecture) · [Engineering](#engineering-highlights) · [Project overview](docs/PROJECT_OVERVIEW.md)
+
+**[Architecture Explorer — interactive public diagrams](docs/index.html)**
+
+[Equivalent text reading](docs/architecture-explorer/reading.html)
+
+<sub>Ready for local review · GitHub Pages publication awaits approval</sub>
+
+<sub>Public product showcase · Private commercial source code</sub>
 
 </div>
 
----
-
 ## Overview
 
-**SGX VI** is a commercial, user-facing AI image-generation experience. Visitors can submit one or two images, provide an email address, and purchase a personalized digital result through Mercado Pago. The published service describes starting generation after payment confirmation and providing access to the result and an email link.
+**SGX VI** is a production application for creating personalized, GTA VI-inspired digital artwork. Its public journey connects one or two image uploads and an email address to a Mercado Pago checkout, then describes generation after confirmed payment and delivery through a result page and email link.
 
-This repository is a **public product showcase**, not the source repository. The production implementation and proprietary workflows are maintained privately.
+This case study presents the product experience and documented technology choices. The commercial implementation and proprietary workflows are maintained privately.
 
-## Product walkthrough
+**Explore the application:** [create.sgodx.com](https://create.sgodx.com/) · **Author:** [David Castro / dpsychoo](https://github.com/dpsychoo)
 
-| Stage | User experience |
+## Application screenshots
+
+Real production interface captures, reviewed on **13 October 2026**. Inputs are empty, no images are uploaded, and consent is unchecked. The captures are cropped to the original creation controls; the mobile view uses browser emulation.
+
+### Desktop creation interface
+
+<p align="center">
+  <img src="assets/screenshots/creation-desktop.jpg" width="510" alt="SGX VI desktop creation form with empty upload and email fields, unchecked consent and the public generation CTA" />
+</p>
+
+<details>
+<summary><strong>Mobile creation interface · 390px viewport</strong></summary>
+
+<p align="center">
+  <img src="assets/screenshots/creation-mobile.jpg" width="320" alt="SGX VI creation form at a mobile viewport, with empty inputs and consent unchecked" />
+</p>
+
+</details>
+
+<details>
+<summary><strong>Image-upload interface · empty state</strong></summary>
+
+<p align="center">
+  <img src="assets/screenshots/upload-interface.jpg" width="510" alt="SGX VI image-upload control showing the two-image limit, with no user content" />
+</p>
+
+</details>
+
+Capture sizes and provenance are recorded in the [screenshot inventory](assets/screenshots/README.md). No checkout or purchase was performed.
+
+## Product features
+
+| Capability | Public product experience |
 | :-- | :-- |
-| **01 · Discover** | Explore the themed, responsive landing experience. |
-| **02 · Upload** | Submit one or two source images and an email address. |
-| **03 · Checkout** | Review the service and proceed with Mercado Pago. |
-| **04 · Receive** | After successful payment, follow the published digital delivery flow. |
+| **Immersive presentation** | A themed landing experience with scroll-driven transitions and responsive creation controls. |
+| **Personalized input** | One or two images, an email field and an empty-state upload indicator. |
+| **Purchase clarity** | A pre-payment summary of the service, inputs, delivery, price and payment provider. |
+| **Explicit consent** | Terms, privacy and refund-policy links accompany the consent control before checkout. |
+| **Hosted payment flow** | A Mercado Pago payment CTA; the published service starts processing after payment confirmation. |
+| **Digital delivery** | The published flow provides a generated result page and an email link. |
 
-> **Live payments:** This is a real commercial application. Please do not complete a purchase just to test the portfolio showcase.
+Screenshots and walkthrough cover the public pre-payment interface. Generation and delivery are described from the application's published service information.
 
-## Selected technologies
+## Technology stack
 
-| Area | Technology |
+| Responsibility | Technology |
 | :-- | :-- |
-| Web experience | Astro, React, TypeScript |
-| Data & backend services | Supabase |
-| Payment experience | Mercado Pago |
-| Deployment | Vercel |
+| Frontend | Astro, React, TypeScript |
+| Managed data and file storage | Supabase |
+| AI image processing | OpenAI |
+| Payments | Mercado Pago |
+| Transactional email | Resend |
+| Hosting and application execution | Vercel |
 
-These describe the product's published technology stack at a high level. Internal implementation details, credentials, and proprietary AI processing logic are intentionally omitted.
+The frontend stack is recorded in the existing [project overview](docs/PROJECT_OVERVIEW.md). Provider responsibilities are identified in the application's [published privacy policy](https://create.sgodx.com/privacidad). These are documented technology choices; this showcase is not a source-code audit.
 
-## Visual preview
+## High-level architecture
 
-Production screenshots will be added after review. Planned views:
+The explorer is a high-level product view based on public documentation; it does not disclose the private implementation or source code.
 
-- Desktop landing experience
-- Mobile-responsive interface
-- Upload and pre-checkout experience, with no personal or payment data
+Explore the four [interactive Archify views](docs/index.html): product responsibilities, the customer journey, payment and delivery, and SGX PASS. Each view supports zoom, node search and guided navigation. The [publication proposal](docs/architecture-explorer/PUBLISHING.md) documents the future GitHub Pages setup; publication is not enabled by these changes.
 
-See [the screenshot checklist](assets/screenshots/README.md) for safe capture guidelines.
+The following responsibility map summarizes the public product journey and published provider roles. Payment confirmation precedes image generation; Vercel provides hosting and application execution.
 
-## Engineering focus
+```mermaid
+flowchart LR
+    UI["Web experience<br/>Astro · React · TypeScript"] --> APP["Private application service"]
+    APP <--> PAY["Payments<br/>Mercado Pago"]
+    APP --> AI["Image generation<br/>OpenAI"]
+    APP <--> DATA["Managed data & files<br/>Supabase"]
+    APP --> DELIVERY["Result page + email link<br/>Resend"]
 
-- Building a responsive, branded application experience
-- Designing a multi-step user journey for user-uploaded content
-- Integrating a hosted payment provider into a digital-product flow
-- Connecting frontend, managed backend services, and production deployment
-- Maintaining a clear separation between public product demonstration and private source code
+    classDef interface fill:#0A101F,stroke:#22D3EE,color:#F8FAFC
+    classDef service fill:#11182A,stroke:#A78BFA,color:#F8FAFC
+    class UI,DELIVERY interface
+    class APP,PAY,AI,DATA service
+```
 
-Read the [project overview](docs/PROJECT_OVERVIEW.md) for additional context without exposing the proprietary implementation.
+This diagram describes responsibilities at the product level. It does not specify internal endpoints, database models, deployment topology or proprietary generation logic.
 
-## Explore the project
+## Engineering highlights
 
-**Live website:** https://create.sgodx.com/
+- **Experience design:** Connects an immersive landing presentation to focused, responsive input controls.
+- **Commerce-aware UX:** Places the service summary, consent and policy links before the payment CTA.
+- **Delivery journey:** Coordinates the documented input → confirmed payment → generation → result-and-email flow.
+- **Provider composition:** Brings together managed services for storage, AI generation, payments, email and deployment.
+- **Public/private separation:** Makes the product and engineering context reviewable while keeping commercial source code private.
 
-**Source code:** Private — not distributed through this showcase repository.
+Further product context remains available in the [project overview](docs/PROJECT_OVERVIEW.md).
 
-**Portfolio:** https://github.com/dpsychoo
+## Security and privacy considerations
 
----
+Image uploads and email addresses require careful handling. The [privacy policy](https://create.sgodx.com/privacidad) describes data use, image retention, provider involvement and user rights. It states that payment instrument data is handled by the payment provider and describes file validation and protected result access.
+
+The public interface presents consent and links to the [terms](https://create.sgodx.com/terminos), [privacy policy](https://create.sgodx.com/privacidad) and [refund policy](https://create.sgodx.com/reembolsos) before payment. These are published product and policy statements, not independently audited security or compliance claims.
+
+This repository contains documentation and reviewed empty-state screenshots. It includes no customer uploads, personal contact data, payment records, credentials, database schemas, internal API details or production source code. See [NOTICE.md](NOTICE.md) for repository scope and reuse conditions.
+
+## Independent project disclaimer
 
 <sub>SGX VI is an independent creative experience by SGODX and is not affiliated with, sponsored by, or endorsed by Rockstar Games or Take-Two Interactive. GTA VI and related trademarks belong to their respective owners. No license to third-party artwork, logos, or game assets is granted by this repository.</sub>

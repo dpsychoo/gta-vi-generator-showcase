@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "SGX VI · arquitectura pública",
+    "quality_profile": "showcase",
+    "views": [
+      {"id": "experiencia", "label": "Experiencia del cliente", "focus": ["experiencia", "servicio", "entrega"], "note": "Entrada y entrega del producto documentado públicamente."},
+      {"id": "proveedores", "label": "Responsabilidades de proveedores", "focus": ["servicio", "pago", "generacion", "archivos", "correo"], "note": "Servicios publicados, sin contratos internos ni configuraciones."}
+    ]
+  },
+  "components": [
+    {"id": "experiencia", "type": "frontend", "label": "Experiencia web", "sublabel": "Astro · React · TypeScript", "tag": "Implementado · documentado", "pos": [50, 280], "size": [230, 84]},
+    {"id": "servicio", "type": "backend", "label": "Servicio de aplicación", "sublabel": "Responsabilidad del producto", "tag": "Implementado · documentado", "pos": [490, 280], "size": [250, 84]},
+    {"id": "entrega", "type": "frontend", "label": "Página de resultado", "sublabel": "Entrega digital al cliente", "tag": "Implementado · documentado", "pos": [950, 280], "size": [230, 84]},
+    {"id": "pago", "type": "external", "label": "Mercado Pago", "sublabel": "Proveedor de pagos", "tag": "Implementado · documentado", "pos": [490, 40], "size": [250, 84]},
+    {"id": "generacion", "type": "external", "label": "OpenAI", "sublabel": "Procesamiento de imágenes", "tag": "Implementado · documentado", "pos": [490, 520], "size": [250, 84]},
+    {"id": "archivos", "type": "database", "label": "Supabase", "sublabel": "Datos y archivos", "tag": "Implementado · documentado", "pos": [50, 520], "size": [230, 84]},
+    {"id": "correo", "type": "external", "label": "Resend", "sublabel": "Correo transaccional", "tag": "Implementado · documentado", "pos": [950, 520], "size": [230, 84]}
+  ],
+  "connections": [
+    {"id": "entrada", "from": "experiencia", "to": "servicio", "label": "Imágenes y correo", "variant": "emphasis"},
+    {"id": "resultado", "from": "servicio", "to": "entrega", "label": "Entrega digital", "variant": "emphasis"},
+    {"id": "pago-publico", "from": "servicio", "to": "pago", "label": "Pago"},
+    {"id": "imagen-publica", "from": "servicio", "to": "generacion", "label": "Generación", "labelDy": 24},
+    {"id": "datos-publicos", "from": "servicio", "to": "archivos", "label": "Datos y archivos"},
+    {"id": "enlace-publico", "from": "servicio", "to": "correo", "label": "Enlace por correo"}
+  ],
+  "cards": [
+    {"dot": "cyan", "title": "Alcance público", "items": ["Mapa de responsabilidades, no topología operativa.", "Vercel figura como hosting y ejecución en la política pública."]},
+    {"dot": "violet", "title": "Estado y evidencia", "items": ["Componentes implementados según documentación pública.", "No se publican capacidades planificadas o hipotéticas sin evidencia."]}
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "SGX VI · pago, creación y entrega",
+    "quality_profile": "showcase",
+    "column_fit": "spread",
+    "viewBox": [
+      1060,
+      480
+    ],
+    "views": [
+      {
+        "id": "compra",
+        "label": "Entrada y pago",
+        "focus": [
+          "cliente",
+          "producto",
+          "pagos"
+        ],
+        "note": "Interacciones comerciales visibles y descritas en los términos."
+      },
+      {
+        "id": "creacion",
+        "label": "Creación y entrega",
+        "focus": [
+          "producto",
+          "imagenes",
+          "correo",
+          "cliente"
+        ],
+        "note": "Responsabilidades publicadas; sin contratos de API ni transporte interno."
+      }
+    ]
+  },
+  "participants": [
+    {
+      "id": "cliente",
+      "type": "external",
+      "label": "Cliente",
+      "sublabel": "Experiencia pública"
+    },
+    {
+      "id": "producto",
+      "type": "backend",
+      "label": "SGX VI",
+      "sublabel": "Servicio del producto"
+    },
+    {
+      "id": "pagos",
+      "type": "external",
+      "label": "Mercado Pago",
+      "sublabel": "Pago"
+    },
+    {
+      "id": "imagenes",
+      "type": "external",
+      "label": "OpenAI",
+      "sublabel": "Generación"
+    },
+    {
+      "id": "correo",
+      "type": "external",
+      "label": "Resend",
+      "sublabel": "Entrega del enlace"
+    }
+  ],
+  "messages": [
+    {
+      "id": "entrada-cliente",
+      "from": "cliente",
+      "to": "producto",
+      "y": 160,
+      "label": "Entrada y condiciones",
+      "variant": "emphasis"
+    },
+    {
+      "id": "checkout-publico",
+      "from": "producto",
+      "to": "pagos",
+      "y": 192,
+      "label": "Checkout"
+    },
+    {
+      "id": "confirmacion-publica",
+      "from": "pagos",
+      "to": "producto",
+      "y": 224,
+      "label": "Pago confirmado",
+      "variant": "return"
+    },
+    {
+      "id": "generacion-publica",
+      "from": "producto",
+      "to": "imagenes",
+      "y": 256,
+      "label": "Crear imagen",
+      "variant": "emphasis"
+    },
+    {
+      "id": "imagen-entregada",
+      "from": "imagenes",
+      "to": "producto",
+      "y": 288,
+      "label": "Imagen generada",
+      "variant": "return"
+    },
+    {
+      "id": "resultado-cliente",
+      "from": "producto",
+      "to": "cliente",
+      "y": 320,
+      "label": "Página de resultado",
+      "variant": "return"
+    },
+    {
+      "id": "correo-encargado",
+      "from": "producto",
+      "to": "correo",
+      "y": 352,
+      "label": "Enviar enlace"
+    },
+    {
+      "id": "enlace-cliente",
+      "from": "correo",
+      "to": "cliente",
+      "y": 384,
+      "label": "Correo con enlace",
+      "variant": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Secuencia comercial publicada",
+      "items": [
+        "Orden conceptual del producto, no traza de producción.",
+        "No publica contratos, transporte ni identificadores internos."
+      ]
+    }
+  ]
+}
